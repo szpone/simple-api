@@ -1,10 +1,12 @@
 from tornado.web import Application, RequestHandler
 from tornado.ioloop import IOLoop
+import arrow
 
 
 class HelloHandler(RequestHandler):
     def get(self):
-        self.write({'message': 'CURRENT TIME AS STRING'})
+        utc = arrow.utcnow().format("YYYY-MM-DD HH:mm:ss")
+        self.write({'message': f'{utc}'})
 
 
 def make_app():
