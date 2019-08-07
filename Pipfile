@@ -8,6 +8,15 @@ verify_ssl = true
 [packages]
 tornado = "*"
 arrow = "*"
+mypy = "*"
+pre-commit = "*"
+flake8 = "*"
+isort = "*"
+bandit = "*"
+black = "*"
 
 [requires]
 python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true
