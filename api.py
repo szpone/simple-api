@@ -1,4 +1,4 @@
-from typing import Any, List, Tuple
+from typing import Any
 
 import arrow
 from tornado.ioloop import IOLoop
@@ -12,7 +12,7 @@ class CurrentTimeHandler(RequestHandler):
 
 
 def make_app():
-    urls: List[Tuple[str, Any]] = [("/", CurrentTimeHandler)]
+    urls: Any = [("/", CurrentTimeHandler)]
     return Application(urls)
 
 
