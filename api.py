@@ -13,8 +13,8 @@ class CurrentTimeHandler(RequestHandler):
         self.set_header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS')
 
     def get(self) -> None:
-        utc = arrow.utcnow().format("YYYY-MM-DD HH:mm:ss")
-        self.write({"message": f"{utc}"})
+        current_time = arrow.now().format("YYYY-MM-DD HH:mm:ss")
+        self.write({"message": f"{current_time}"})
 
 
 class RecommendationsHandler(RequestHandler):
